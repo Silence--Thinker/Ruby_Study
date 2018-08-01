@@ -1,5 +1,4 @@
-
-# /-*- code:utf-8 -*-
+# -*- code:utf-8 -*-
 # /usr/bin/ruby -w
 
 # @type Ruby while 语句
@@ -139,7 +138,4 @@ for i in 0..5
   end
 end
 
-for i in 1..5
-  retry if  i > 2
-  puts "局部变量的值为 #{i}"
-end
+
