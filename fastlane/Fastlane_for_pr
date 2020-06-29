@@ -1,0 +1,32 @@
+
+platform :ios do
+
+  desc "mt lint check"
+  lane :mtlint do |options|
+    oss_podlint(
+        podspec: "MTOverseas.podspec",
+        allow_warnings: "YES" # http://git.sankuai.com/projects/HYPERLOOP/repos/hyperloop/browse/app/fastlane_actions/component_pod_spec_lint_action.rb
+    )
+  end
+
+  desc "pod install"
+  lane :podinstall do |options|
+    cocoapods(
+        podfile: "Podfile",
+        repo_update: true,
+        )
+  end
+
+  desc "warning check"
+  lane :warning do |options|
+
+    # podinstall()
+
+    ret_warning(
+      workspace: "retail.xcworkspace",
+      scheme:"RETBTrade",
+      ignores: []
+    )
+  end
+
+end

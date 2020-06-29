@@ -1,0 +1,17 @@
+
+platform :ios do
+
+  desc "git 切换分支"
+  lane :tobranch do |options|
+    branchName = options[:branch]
+    demo_first(name: branchName)
+  end
+
+  desc "编译检查"
+  lane :retlint do|options|
+
+    ret_podlint(podspec: "RETFoundation.podspec")
+
+  end
+
+end
